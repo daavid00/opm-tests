@@ -5,10 +5,10 @@
 
 -- Copyright (C) 2024 Equinor
 
--- This deck is testing situation where a group switches to a control mode (water)
--- which is not feasible for one of its wells (B2). In this case, the well rather gets
--- a translated target for the original control mode (to prevent singularities)
--- NOTE: this way of handling water-breakthrough is discouraged, but should still 
+-- This deck tests the situation where a group switches to a water control mode
+-- that is not feasible for one of its wells (B-2H). In this case, the well instead
+-- gets a translated target for the original control mode (to prevent singularities).
+-- NOTE: this way of handling water breakthrough is discouraged, but it should still 
 -- be handled gracefully by the simulator.
 -- GCONPROD
 --  'PLAT-A'  ORAT  6000.0 500.0 1*  10000 'RATE' /
@@ -217,7 +217,7 @@ RPTRST
 WELSPECS
 --WELL     GROUP  IHEEL JHEEL   DREF PHASE   DRAD INFEQ SIINS XFLOW PRTAB  DENS
  'B-1H'  'B1'   11    3      1*   OIL     1*   1*   SHUT 1* 1* 1* /
- 'B-2H'  'B1'    4    7      1*   OIL     1*   1*   SHUT 1* 1* 1* /
+ 'B-2H'  'B1'    1    1      1*   OIL     1*   1*   SHUT 1* 1* 1* /
  'B-3H'  'B1'   11   12      1*   OIL     1*   1*   SHUT 1* 1* 1* /
  'C-1H'  'C1'   13   20      1*   OIL     1*   1*   SHUT 1* 1* 1* /
  'C-2H'  'C1'   12   27      1*   OIL     1*   1*   SHUT 1* 1* 1* /
